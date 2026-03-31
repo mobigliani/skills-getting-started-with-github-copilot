@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showMessage(message, type) {
     messageDiv.textContent = message;
-    messageDiv.className = type;
+    messageDiv.className = `message ${type}`;
     messageDiv.classList.remove("hidden");
 
     // Hide message after 5 seconds
