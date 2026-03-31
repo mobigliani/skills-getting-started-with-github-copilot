@@ -12,11 +12,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 import os
 from pathlib import Path
+from pydantic import EmailStr
 
-EMAIL_PATTERN = r"^[^@\s]+@[^@\s]+\.[^@\s]+$"
 EmailQuery = Annotated[
-    str,
-    Query(min_length=1, pattern=EMAIL_PATTERN),
+    EmailStr,
+    Query(min_length=1),
 ]
 
 app = FastAPI(title="Mergington High School API",
